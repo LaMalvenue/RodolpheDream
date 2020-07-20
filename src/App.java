@@ -1,8 +1,7 @@
-import animals.*;
-import animals.cats.Cat;
-import animals.ferrets.Ferret;
-import animals.hamsters.Hamster;
-import animals.rabbits.Rabbit;
+import animals.Cat;
+import animals.Ferret;
+import animals.Hamster;
+import animals.Rabbit;
 import player.Rodolphe;
 
 public class App {
@@ -11,21 +10,43 @@ public class App {
         Rodolphe.getRodolphe();
 
         createAnimal("Hamster", "Victor");
-
-        Rodolphe.stroke(Rodolphe.animals.get(0));
-
-        Rodolphe.getNumberOfAnimals();
-
         createAnimal("Lapin", "Charlot");
-
-        showAnimals();
-
         createAnimal("Hamster", "Raymond");
         createAnimal("Hamster", "Jean-Paul");
 
+        Rodolphe.animals.get(1).getDateAdoption();
+
         currentLevel();
         showAnimals();
+        Rodolphe.getNumberOfAnimals();
 
+        createAnimal("Hamster", "Raoul");
+        createAnimal("Hamster", "Hugues");
+
+        createAnimal("Cat", "Simone");
+
+        createAnimal("Rabbit", "Mireille");
+        createAnimal("Rabbit", "Odette");
+        createAnimal("Rabbit", "Jacqueline");
+        createAnimal("Rabbit", "Michelle");
+        createAnimal("Rabbit", "Daniel");
+
+        currentLevel();
+
+        createAnimal("Ferret", "Nicole");
+        createAnimal("Ferret", "Veronique");
+        createAnimal("Ferret", "Pascal");
+        createAnimal("Ferret", "Marty");
+        createAnimal("Ferret", "Charles");
+
+        Rodolphe.getNumberOfAnimals();
+        currentLevel();
+
+        createAnimal("Cat", "Poulette");
+        createAnimal("Cat", "Poulet");
+
+        Rodolphe.stroke(Rodolphe.animals.get(Rodolphe.animals.size()-1));
+        Rodolphe.stroke(Rodolphe.animals.get(0));
 
     }
 
@@ -63,32 +84,36 @@ public class App {
                 if (Rodolphe.getLevel() >= 1) {
                     System.out.println("Rodople achète un hamster, il décide de lui donner le joli nom de " + name + ".");
                     Rodolphe.animals.add(new Hamster(name));
+                    Rodolphe.setExperience((short) 2);
                 } else {
-                    System.out.println("Rodolphe n'a pas assez d'expérience pour acheter cet animal !");
+                    System.out.println("Rodolphe n'a pas encore assez d'expérience pour acheter un petit hamster !\n");
                 }
                 break;
             case "Rabbit":
                 if (Rodolphe.getLevel() >= 2) {
                     System.out.println("Rodople achète un lapinou, il décide de lui donner le joli nom de " + name + ".");
                     Rodolphe.animals.add(new Rabbit(name));
+                    Rodolphe.setExperience((short) 4);
                 } else {
-                    System.out.println("Rodolphe n'a pas assez d'expérience pour acheter cet animal !");
+                    System.out.println("Rodolphe n'a pas assez d'expérience pour acheter un lapin ! :(\n");
                 }
                 break;
             case "Ferret":
                 if (Rodolphe.getLevel() >= 3) {
                     System.out.println("Rodople achète un furet, il décide de lui donner le joli nom de " + name + ".");
                     Rodolphe.animals.add(new Ferret(name));
+                    Rodolphe.setExperience((short) 8);
                 } else {
-                    System.out.println("Rodolphe n'a pas assez d'expérience pour acheter cet animal !");
+                    System.out.println("Rodolphe n'a pas assez d'expérience pour acheter un furet ! :(\n");
                 }
                 break;
             case "Cat":
                 if (Rodolphe.getLevel() >= 4) {
                     System.out.println("Rodople achète un pitichat, il décide de lui donner le joli nom de " + name + ".");
                     Rodolphe.animals.add(new Cat(name));
+                    Rodolphe.setExperience((short) 16);
                 } else {
-                    System.out.println("Rodolphe n'a pas assez d'expérience pour acheter cet animal !");
+                    System.out.println("Rodolphe n'a pas assez d'expérience pour acheter un chat ! :(\n");
                 }
                 break;
         }

@@ -19,6 +19,7 @@ public class Level implements PropertyChangeListener {
     public void propertyChange(PropertyChangeEvent evt) {
         System.out.println("Rodolphe gagne de l'" + evt.getPropertyName() + " !");
         System.out.println("\t(" + evt.getOldValue() +  " -> " + evt.getNewValue() + ")\n");
+        
         int experience = (int) evt.getNewValue();
 
         if (experience < 10) this.level=1;

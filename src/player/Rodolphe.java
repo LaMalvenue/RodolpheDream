@@ -40,9 +40,9 @@ public class Rodolphe {
         System.out.println();
     }
 
-    public static void setExperience(int xpToAdd) {
+    public static void setExperience(short experienceToAdd) {
         int old = Rodolphe.experience;
-        Rodolphe.experience += xpToAdd;
+        Rodolphe.experience += experienceToAdd;
         pcs.firePropertyChange("experience", old, Rodolphe.experience);
     }
 

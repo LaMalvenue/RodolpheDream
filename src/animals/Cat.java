@@ -1,6 +1,5 @@
-package animals.cats;
+package animals;
 
-import animals.Animal;
 import animals.behavior.Purr;
 
 public class Cat extends Animal {
@@ -10,8 +9,6 @@ public class Cat extends Animal {
         this.className = "Chat";
         this.happyBehavior = new Purr();
         this.price = 50;
-        this.experienceGiven = 16;
-        this.givesExperience();
     }
 
     @Override

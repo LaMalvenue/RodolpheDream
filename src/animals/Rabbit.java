@@ -1,21 +1,19 @@
-package animals.hamsters;
+package animals;
 
-import animals.Animal;
 import animals.behavior.NoReaction;
 
-public class Hamster extends Animal {
+public class Rabbit extends Animal {
 
-    public Hamster(String name) {
+    public Rabbit(String name) {
         super(name);
-        this.className = "Hamster";
+        this.className = "Lapin";
         this.happyBehavior = new NoReaction();
         this.price = 5;
-        this.experienceGiven = 2;
-        this.givesExperience();
     }
 
     @Override
     public String getClassName() {
         return this.className;
     }
+
 }
