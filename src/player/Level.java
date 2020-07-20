@@ -6,7 +6,6 @@ import java.beans.PropertyChangeListener;
 public class Level implements PropertyChangeListener {
 
     private byte level;
-    
 
     public Level(byte level) {
         this.level = level;
@@ -18,10 +17,9 @@ public class Level implements PropertyChangeListener {
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-        System.out.println("Variation of " + evt.getPropertyName());
-        System.out.println("\t(" + evt.getOldValue() +  " -> " + evt.getNewValue() + ")");
+        System.out.println("Rodolphe gagne de l'" + evt.getPropertyName() + " !");
+        System.out.println("\t(" + evt.getOldValue() +  " -> " + evt.getNewValue() + ")\n");
         int experience = (int) evt.getNewValue();
-        System.out.println("Property in object " + evt.getSource());
 
         if (experience < 10) this.level=1;
         else if (experience < 30) this.level=2;
